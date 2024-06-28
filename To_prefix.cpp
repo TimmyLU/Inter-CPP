@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 /*  
-    C code: 一個一個讀入stack，讀到右括號，把stack pop
+    C++ code: 一個一個讀入stack，讀到右括號，把stack pop
     3+4*(2-1) ----> 3421-*+
 */
 int main(){
