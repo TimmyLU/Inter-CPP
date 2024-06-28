@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+void swap(int *a, int *b) {
+    if (a != b) { // 確保指標不同，防止同一個地址的變數交換導致問題
+        *a = *a ^ *b;
+        *b = *a ^ *b;
+        *a = *a ^ *b;
+    }
+}
+
+int main() {
+    int x = 5;
+    int y = 10;
+
+    printf("Before swap: x = %d, y = %d\n", x, y);
+    swap(&x, &y);
+    printf("After swap: x = %d, y = %d\n", x, y);
+
+    return 0;
+}
