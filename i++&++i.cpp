@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> // i++ 跟 ++i 的區別
 int main(){
     int a[] = {1, 2, 3, 4, 5, 6};
     int *p = a;
