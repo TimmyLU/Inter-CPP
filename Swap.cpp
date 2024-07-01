@@ -1,7 +1,7 @@
-#include <stdio.h>
+#include <stdio.h> //不使用temp實作swap
 
-void swap(int *a, int *b) {
-    if (a != b) { // 確保指標不同，防止同一個地址的變數交換導致問題
+void swap(int *a, int *b){
+    if (a != b) {
         *a = *a ^ *b;
         *b = *a ^ *b;
         *a = *a ^ *b;
