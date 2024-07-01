@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream> // 找出指定範圍中的primes
 #include <vector>
 #include <cmath>
 
