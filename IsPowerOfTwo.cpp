@@ -1,5 +1,4 @@
-#include <iostream>
-
+#include <iostream> //一行判斷是否為2的次方
 using namespace std;
 
 bool isPowerOfTwo(int num){
