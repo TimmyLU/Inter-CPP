@@ -1,18 +1,9 @@
 #include <stdio.h>
 /*
-	fac1 = 迭代（Iteration）
-	fac2 = 遞歸（Recursion）
+	迭代（Iteration）
+	遞歸（Recursion）
 */
-int fac2(int n){
-	if(n == 0){
-		return 1;
-	}
-	else{
-		return n * fac2(n - 1);
-	}
-}
-
-int fac1(int n){
+int Iteration(int n){
 	int ans = 1;
 	for(int i = 1;i <= n;i++){
 		ans = ans * i;
@@ -20,10 +11,18 @@ int fac1(int n){
 	return ans;
 }
 
+int Recursion(int n){
+	if(n == 0){
+		return 1;
+	}else{
+		return n * Recursion(n - 1);
+	}
+}
+
 int main(){
 	int n;
 	scanf("%d", &n);
-	printf("%d",fac1(n));
-	printf("%d",fac2(n));
+	printf("%d\n",Iteration(n));
+	printf("%d\n",Recursion(n));
 	return 0;
 }
