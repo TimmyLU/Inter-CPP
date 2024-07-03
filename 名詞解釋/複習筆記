@@ -14,13 +14,17 @@ static 變數 : 生命周期 (life time) 跟程式一樣長，而範圍 (scope) 
 
 global : 所有區段皆可使用此變數。
 
-3. 記憶體的配置
+3. 記憶體的配置 & 定義
 
 Stack : 存放函數的參數、區域變數等，由空間配置系統自行產生與回收。(會稱作 stack 是由於其配置遵守 LIFO)
+        LIFO (Last In First Out) 大部分情況用來存local variable的地方, 可以用來實作四則運算
 
 Heap : 一般由程式設計師分配釋放，執行時才會知道配置大小，如 malloc/new 和 free/delete。(注意其資料結構不是 DS 中的 heap 而是 link-list)
+       二元樹的一種, 特性是root一定是最大或最小, 父節點必定大於子節點
 
 Global : 包含 BSS (未初始化的靜態變數)、data section (全域變數、靜態變數) 和 text/code (常數字元)。
+
+Queue : FIFO (First In First Out) stack的相反, 有些CPU的排班會利用queue
 
 4. const
 
