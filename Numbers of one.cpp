@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> // 計算二進位數有多少個1
 
 int numbers_of_one(unsigned int n){
 	int count = 0;
