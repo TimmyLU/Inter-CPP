@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void swap(int a, int b){
+void swap(int a, int b){  // ----> int *a, int *b
     int temp = a;
     a = b;
     b = temp;
@@ -12,6 +12,6 @@ void swap(int a, int b){
 int main(){
     int a = 5;
     int b = 10;
-    swap(a, b);
+    swap(a, b); // ----> swap(&a, &b);
     cout << a << " " << b << endl; // // a = 5, b = 10;
 }
