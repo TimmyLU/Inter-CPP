@@ -53,6 +53,80 @@ Volatile : 告知編譯器不要對它做最佳化, 每次都從記憶體撈值,
 8. 延伸性資料型態：Struct、Typedef、Union 和 Enum
 
 Struct : 自定義的一種型別, 可以包含多個不同型別的變數, 每個成員都會配置一塊空間。
+
+/* struct */
+struct GPIO {
+    char name[12];
+    unsigned char direction;
+    unsigned int value;
+    struct GPIO *gpio_ptr;
+    //struct不能含有自己, 但可以有自己的pointer
+};
+
+int main(void)
+{
+    /* normal */
+    /*
+    struct GPIO g = {
+        "GPIO_IO1",
+        0,
+        1,
+        NULL
+    };
+    */
+    
+    /* designated initializers(recommend) */
+    struct GPIO g = {
+        .name = "GPIO_IO1",
+        .direction = 0,
+        .value = 1,
+        .gpio_ptr = NULL
+    };
+    
+    printf("%s\n", g.name);        //GPIO_IO1
+    printf("%d\n", g.direction);   //0
+    printf("%d\n", g.value);       //1
+    printf("%p\n", g.gpio_ptr);    //nil
+    
+    return 0;
+}
+
 Typedef : 可以為資料型態建立別名，使程式更易閱讀理解。
+
 Union : 跟struct有點像, 主要差別是裡面的成員共用一塊記憶體, 所需記憶體由型別最大的成員決定。
+
+/* union */
+union data {
+    unsigned char c;    //1 byte
+    int val;            //4 bytes
+    long int li;        //8 bytes
+};
+
+int main(void)
+{
+    union data d;
+    d.c = 255;
+    printf("%d\n", d.c);    //255
+    
+    return 0;
+}
+
 Enum : 可以用來定義常數, 主要是可以提升程式可讀性, 裡面的值從值指定的值開始遞增, 預設為0。
+
+/* enum */
+enum GPIO_NUM {
+    GPIO_IO0 = 0,
+    GPIO_IO1,
+    GPIO_IO2,
+    GPIO_IO3,
+    GPIO_IO4
+};
+
+int main(void)
+{
+    enum GPIO_NUM G = GPIO_IO3;
+    
+    printf("%d\n", G);    //3
+    
+    return 0;
+}
