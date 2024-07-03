@@ -17,7 +17,7 @@ int main(){
             }
         }
         if (is_prime){
-            primes.push_back(i);
+            primes.push_back(i); // 應該可以拿掉也沒差
             cout << i << " "; // 輸出質數
         }
     }
