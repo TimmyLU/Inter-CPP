@@ -1,0 +1,4 @@
+struct listNode {
+    int data;
+    struct listNode *next;
+};
