@@ -1,0 +1,54 @@
+刪除給定的節點, 我這邊是實作給一個數值, 然後刪除該數值
+這樣寫會導致只能刪除遇到的第一個, 如果後面有重複的會刪不到
+所以又寫了一個刪除指定位置的
+
+/* delete node by value */
+void delete_node_value(struct listNode **head, int data) {
+    struct listNode *prev = NULL;
+    struct listNode *curr = *head;
+
+    while (curr && curr->data != data) {
+        prev = curr;
+        curr = curr->next;
+    }
+
+    if (curr == NULL) {
+        printf("Node doesn't exits\n");
+    } else if (*head == curr) {
+        prev = curr;
+        free(curr);
+        curr = NULL;
+    } else {
+        prev->next = curr->next;
+        free(curr);
+        curr = NULL;
+    }
+}
+
+/* delete node by position */
+void delete_node_position(listNode **head, int pos)
+{
+    struct ListNode *prev = NULL;
+    struct ListNode *curr = *head;
+    int i = 0;
+    
+    if (pos < 0) return;    //Not allowed -1,-2...
+
+    while (curr && i != pos) {
+        prev = curr;
+        curr = curr->next;
+        i++;
+    }
+
+    if (curr == NULL) {
+        printf("Node doesn't exits\n");
+    } else if (*head == curr) {
+        *head = curr->next;
+        free(curr);
+        curr = NULL;
+    } else {
+        prev->next = curr->next;
+        free(curr);
+        curr = NULL;
+    }
+}
