@@ -6,7 +6,8 @@ bool isPowerOfTwo(int num){
 }
 int main(){
 	int num;
-	cin >> num;
-	cout << (isPowerOfTwo(num) ? "yes" : "no");
+	while(cin >> num){
+		cout << (isPowerOfTwo(num) ? "yes" : "no") << endl;
+	}
 	return 0;
 }
