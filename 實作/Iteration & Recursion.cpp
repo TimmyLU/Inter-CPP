@@ -1,7 +1,7 @@
 #include <stdio.h>
 /*
-	迭代（Iteration）
-	遞歸（Recursion）
+	迭代（Iteration）: 計算N!
+	遞歸（Recursion）: 計算N!
 */
 int Iteration(int n){
 	int ans = 1;
