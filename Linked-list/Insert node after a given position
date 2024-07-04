@@ -1,0 +1,24 @@
+插入node在給定的position之後
+沒特別檢查輸入進來的pos, 所以如果輸入進來的pos大於list長度, 那就會直接接在最後一個後面
+
+void insert_node_after(struct listNode **head, int pos, int data)
+{
+    struct listNode *new_node = NULL;
+    struct listNode *curr = *head;
+    int i = 0;
+    new_node = (struct listNode *)malloc(sizeof(struct listNode));
+    if (new_node == NULL) return;
+    
+    new_node->next = NULL;
+    new_node->data = data;
+    
+    if (*head == NULL || pos < 0) return;
+    
+    while (curr->next && pos != i) {
+        curr = curr->next;
+        i++;
+    }
+    
+    new_node->next = curr->next;
+    curr->next = new_node;
+}
