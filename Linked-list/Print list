@@ -1,0 +1,13 @@
+也算是最基本的題目了, 就是把所有node走過一次, 不過如果node有cycle的話就需要額外處理
+底下這段是假設沒有cycle
+
+void print_list(struct listNode *head) {
+    struct listNode *ptr = head;
+
+    while (ptr->next) {
+        printf("%d->", ptr->data);
+        ptr = ptr->next;
+    }
+
+    printf("%d\n", ptr->data);
+}
