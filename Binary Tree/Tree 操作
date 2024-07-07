@@ -39,7 +39,7 @@ void preorderTraversal(TreeNode* root) {
     if (root == nullptr) {
         return;
     }
-    std::cout << root->val << " ";
+    cout << root->val << " ";
     preorderTraversal(root->left);
     preorderTraversal(root->right);
 }
@@ -50,7 +50,7 @@ void inorderTraversal(TreeNode* root) {
         return;
     }
     inorderTraversal(root->left);
-    std::cout << root->val << " ";
+    cout << root->val << " ";
     inorderTraversal(root->right);
 }
 
@@ -61,7 +61,7 @@ void postorderTraversal(TreeNode* root) {
     }
     postorderTraversal(root->left);
     postorderTraversal(root->right);
-    std::cout << root->val << " ";
+    cout << root->val << " ";
 }
 
 //刪除
