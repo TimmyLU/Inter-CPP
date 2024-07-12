@@ -12,6 +12,7 @@ char convert(char c) {
 
 int main(){
     char c;
-    cin >> c;
-    cout << convert(c);
+    while(cin >> c){
+        cout << convert(c);
+    }
 }
