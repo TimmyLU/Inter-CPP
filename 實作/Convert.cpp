@@ -11,8 +11,14 @@ char convert(char c) {
 }
 
 int main(){
-    char c;
-    while(cin >> c){
-        cout << convert(c);
+    //char c;
+    string s;
+    while(cin >> s){
+        for(char c : s){
+            cout << convert(c);
+        }
+        cout << endl;
     }
+    //cin >> c;
+    //cout << convert(c);
 }
