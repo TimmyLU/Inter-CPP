@@ -2,12 +2,16 @@
 using namespace std;
 
 bool isPowerOfTwo(int num){
-    return num > 0 && (num & (num - 1)) == 0;
+    return (num > 0 && (num & (num - 1)) == 0) ? "true" : "false";
 }
 int main(){
 	int num;
 	while(cin >> num){
-		cout << (isPowerOfTwo(num) ? "yes" : "no") << endl;
+		if(isPowerOfTwo){
+		    cout << "yes";
+		}else{
+		    cout << "no";
+		}
 	}
 	return 0;
 }
