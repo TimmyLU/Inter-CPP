@@ -1,12 +1,12 @@
 #include <iostream>
-#include <vector>
+//#include <vector>
 #include <cmath>
 using namespace std;
 
 int main(){
     int num;
     cin >> num;
-    vector<int> primes; // 儲存找到的所有質數
+    //vector<int> primes; // 儲存找到的所有質數
     
     for (int i = 2; i <= num; i++){
         bool is_prime = true;
@@ -17,7 +17,7 @@ int main(){
             }
         }
         if (is_prime){
-            primes.push_back(i); // 應該可以拿掉也沒差
+            //primes.push_back(i);
             cout << i << " "; // 輸出質數
         }
     }
